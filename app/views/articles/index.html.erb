@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="text-center">
+    <h1 class="text-center">Chuck Norris about Beer</h1>
+    <%= link_to "Post a new article", new_article_path, class: "btn btn-primary text-center" %>
+  </div>
+  <% @articles.each do |article| %>
+    <div class="article">
+      <div class="article-main">
+        <h3><%= link_to article.title, article_path(article) %></h3>
+        <p><%= article.content.first(50) + "..." %></p>
+      </div>
+      <div class="article-buttons">
+        <%= link_to edit_article_path(article) do %><i class="fa fa-edit"></i><% end %>
+        <%= link_to article_path(article), method: "delete" do %><i class="fa fa-trash"></i><% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

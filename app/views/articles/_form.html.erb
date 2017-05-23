@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 class="text-center">Create a new article</h1>
+  <%= form_for(@article) do |f| %>
+    <%= f.label :title%>
+    <%= f.text_field :title, class: "form-control" %>
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control", rows: 20 %>
+    <%= f.submit :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
